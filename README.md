@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# SPECTRE // Geo-Intelligence Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deploy to GitHub Pages](https://github.com/johnb8005/spectre-dashboard/actions/workflows/deploy.yml/badge.svg)](https://github.com/johnb8005/spectre-dashboard/actions/workflows/deploy.yml)
 
-Currently, two official plugins are available:
+A James Bond-inspired geo-intelligence command & control dashboard. Frontend-only, built with React, Tailwind CSS, and shadcn/ui.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[Live Demo](https://johnb8005.github.io/spectre-dashboard/)**
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Interactive world map with real country boundaries (react-simple-maps)
+- Zoomable/pannable map with animated satellite tracks and data streams
+- Field agent tracking with real-time status (active, compromised, extraction, dark, standby)
+- Mission zone overlays - click a mission to project its operational zone onto the map with intel markers
+- Agent dossier panel with vitals, cover identity, and action buttons
+- Live threat feed with severity levels and geolocation
+- Active missions briefing with classification levels
+- Crypto terminal with simulated encrypted comms
+- Proximity radar widget
+- Satellite pass scheduling
+- CRT scanline effects and animated UI throughout
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** + TypeScript
+- **Tailwind CSS** v4 + shadcn/ui primitives
+- **Vite** (bundler)
+- **Bun** (runtime & package manager)
+- **react-simple-maps** (world map)
+- **Lucide React** (icons)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun install
+bun dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun run build
 ```
