@@ -22,7 +22,7 @@ export default function CryptoTerminal() {
   const [visibleLines, setVisibleLines] = useState<number>(0);
 
   useEffect(() => {
-    const timers: NodeJS.Timeout[] = [];
+    const timers: ReturnType<typeof setTimeout>[] = [];
     terminalLines.forEach((line, i) => {
       timers.push(
         setTimeout(() => setVisibleLines(i + 1), line.delay + 500)

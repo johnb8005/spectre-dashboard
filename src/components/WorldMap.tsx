@@ -380,7 +380,6 @@ export default function WorldMap({ agents, threats, onAgentSelect, selectedAgent
                     coordinates={marker.coords}
                     onMouseEnter={() => setHoveredIntel(`${selectedMission.id}-${i}`)}
                     onMouseLeave={() => setHoveredIntel(null)}
-                    style={{ cursor: "default" }}
                   >
                     {/* Connection line from intel marker to zone center */}
                     {/* (rendered as a subtle indicator) */}
@@ -612,7 +611,6 @@ export default function WorldMap({ agents, threats, onAgentSelect, selectedAgent
                 onClick={() => onAgentSelect(agent)}
                 onMouseEnter={() => setHoveredAgent(agent.id)}
                 onMouseLeave={() => setHoveredAgent(null)}
-                style={{ cursor: "pointer" }}
               >
                 {/* Pulse rings */}
                 {agent.status !== "dark" && (
